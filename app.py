@@ -34,7 +34,7 @@ def home():
 
 @app.route("/paygap")
 def paygap_form():
-    state_input = request.args.get("state", "").strip()
+    state_input = request.args.get("state", "").strip().title()
     place_input = request.args.get("county", "").strip().lower()
     
     state_fips = STATE_FIPS.get(state_input) or state_input
