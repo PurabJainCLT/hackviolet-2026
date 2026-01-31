@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, render_template
 import requests
 import pandas as pd
 
@@ -41,15 +41,7 @@ for _, row in df_fips.iterrows():
 
 @app.route("/")
 def home():
-    return """
-    <h1>Gender Pay Gap Lookup</h1>
-    <form action="/paygap" method="get">
-        <label>State name or FIPS: <input name="state"></label><br>
-        <label>County / Place name: <input name="county"></label><br>
-        <button type="submit">Get Pay Gap</button>
-    </form>
-    <p>Example: State=51 or Virginia, County/Place=Blacksburg</p>
-    """
+    return render_template("index.html")
 
 @app.route("/paygap")
 def paygap_form():

@@ -6,4 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Home </title>
     </head>
+
+    <body>
+        <h1>Gender Pay Gap Lookup</h1>
+        <form action="/paygap" method="get">
+            <label>State name or FIPS: <input id="state" name="state"></label><br>
+            <label>County / Place name: <input id="county" name="county"></label><br>
+            <button type="submit">Get Pay Gap</button>
+        </form>
+        <p>Example: State=51 or Virginia, County/Place=Blacksburg</p>
+    </body>
 </html>
