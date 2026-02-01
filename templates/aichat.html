@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,29 +11,72 @@
         body { font-family: 'Inter', sans-serif; }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
         .ai-output {
-            height: 350px;
+            height: 450px;
             overflow-y: auto;
             overflow-x: hidden;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 10px;
             background: #fafafa;
-            }
-
-
+        }
     </style>
 </head>
 
 <body class="bg-slate-50 min-h-screen flex flex-col justify-center p-4 bg-[radial-gradient(#008000_1px,transparent_1px)] [background-size:16px_16px]" style="background-color:#C9E4DE">
     <div class="w-full max-w-md" style="margin-right: auto; margin-left: auto;">
         <div class="text-center mb-8">
-            <h1 class="text-4xl text-center font-extrabold tracking-tight italic">Wage<span class="text-[#FBEC5D]">Gap</span><br>Help<span class="text-[#FBEC5D]">Center</span></h1>
+            <h1 class="text-4xl text-center font-extrabold tracking-tight italic">
+                Wage<span class="text-[#FBEC5D]">Gap</span><br>
+                Help<span class="text-[#FBEC5D]">Center</span>
+            </h1>
         </div>
 
-        <div class="glass border border-white shadow-2xl rounded-[2.5rem] p-10 .ai-output">
-            
+        <div class="glass border border-white shadow-2xl rounded-[2.5rem] p-10 ai-output" id="ai-output">
+            Loading advice...
+        </div>
+
+        <!-- New Search Button -->
+        <div class="mt-6 text-center">
+            <a href="/" 
+               class="inline-block bg-[#FBEC5D] text-white font-bold py-3 px-6 rounded-xl hover:bg-red-950 transition-all">
+               New Search
+            </a>
         </div>
     </div>
-</body>
 
+    <script>
+        async function loadAdvice() {
+            // Predefined prompt for Gemini — advice for women to advance careers & negotiate pay
+            const prompt = `
+You are a helpful career assistant for women who may be underpaid according to national and local statistics.
+Provide advice for advancing their careers, improving salary, and negotiating fair pay.
+Base your advice on the following resources:
+https://leanin.org/negotiation
+https://www.comerica.com/insights/business-management/assorted-business/salary-negotiation-tactics-every-woman-should-know.html
+https://hightoweradvisors.com/blogs/well-th-blog/how-to-negotiate-a-fair-and-equal-salary
+https://www.stkate.edu/academics/women-in-leadership-degrees/women-negotiating-salary
+https://powertofly.com/up/salary-negotiation-women
+Do not ask the user for input. Do not change topics. Give actionable advice for women to further their careers. Write short and concise
+sentences. DO NOT use symbols in your answer, just pure text, punctuation, and numbers. DO NOT exceed 300 words.
+DO NOT use "*" character in your answer. Write in list format with headers to each paragraph.
+`;
+
+            try {
+                const res = await fetch("/ask", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ prompt })
+                });
+                const data = await res.json();
+                document.getElementById("ai-output").innerText = data.response;
+            } catch (err) {
+                document.getElementById("ai-output").innerText = "Sorry, we couldn't load advice at this time.";
+                console.error(err);
+            }
+        }
+
+        // Load advice on page load
+        window.onload = loadAdvice;
+    </script>
+</body>
 </html>

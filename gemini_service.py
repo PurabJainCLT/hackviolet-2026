@@ -1,12 +1,24 @@
 from google import genai
 
-# Set API key directly
-genai.api_key = "AIzaSyCm29SAS0T536s80lRQ_Stb3oOc6k2bYTE"
+# Initialize the client with your API key
+client = genai.Client(api_key="API_KEY")
 
-# Select model
-model = "gemini-1.5-flash"
+MODEL = "models/gemini-2.5-flash"   
 
 def ask_gemini(prompt: str) -> str:
-    # generate_text is the current method for text generation
-    response = genai.generate_text(model=model, prompt=prompt)
-    return response.result
+    """
+    Send a prompt to Gemini and return the text response.
+    """
+    try:
+        # The correct method is generate_content
+        response = client.models.generate_content(
+            model=MODEL,
+            contents=prompt
+        )
+        
+        # Access the text directly from the response object
+        return response.text
+        
+    except Exception as e:
+        print(f"Gemini API error: {e}")
+        return "Sorry, we couldn't generate advice at this time."
