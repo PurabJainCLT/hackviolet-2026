@@ -83,9 +83,9 @@ def place_paygap(state_fips, geo_code, level):
             }}
         </style>
     </head>
-    <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+    <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 bg-[radial-gradient(#008000_1px,transparent_1px)] [background-size:16px_16px]" style="background-color:#C9E4DE">
         <div class="max-w-xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden border border-slate-100">
-            <div class="bg-[#FBEC5D] p-8 text-white"> <p class="text-red-200 text-xs font-bold uppercase tracking-widest mb-1">Gender Pay Gap Report</p>
+            <div class="bg-[#FBEC5D] p-8 text-white"> <p class="text-stone-200 text-xs font-bold uppercase tracking-widest mb-1">Gender Pay Gap Report</p>
                 <h1 class="text-3xl font-bold italic">{res['NAME']}</h1>
             </div>
             <div class="p-8">
