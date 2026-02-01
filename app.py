@@ -80,6 +80,10 @@ def place_paygap(state_fips, geo_code, level):
                 animation: grow 1.5s ease-out forwards;
             }}
         </style>
+        <style>
+        body {{ font-family: 'Inter', sans-serif; }}
+        .glass {{ background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }}
+    </style>
     </head>
     <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 bg-[radial-gradient(#008000_1px,transparent_1px)] [background-size:16px_16px]" style="background-color:#C9E4DE">
         <nav class="fixed top-1 left-1/2 -translate-x-1/2 w-full flex items-center justify-between px-6 py-4 glass border border-white shadow-lg rounded-2xl z-50">
