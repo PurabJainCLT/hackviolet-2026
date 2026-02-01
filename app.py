@@ -82,6 +82,16 @@ def place_paygap(state_fips, geo_code, level):
         </style>
     </head>
     <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 bg-[radial-gradient(#008000_1px,transparent_1px)] [background-size:16px_16px]" style="background-color:#C9E4DE">
+        <nav class="fixed top-1 left-1/2 -translate-x-1/2 w-full flex items-center justify-between px-6 py-4 glass border border-white shadow-lg rounded-2xl z-50">
+            <div class="text-xl font-bold">
+                Negotiation Help Center
+            </div>
+
+            <div class="flex gap-6 text-sm font-semibold">
+                <a href="/" class="hover:underline">Home</a>
+                <a href="/about" class="hover:underline">About</a>
+            </div>
+        </nav>
         <div class="max-w-xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden border border-slate-100">
             <div class="bg-[#FBEC5D] p-8 text-white">
                 <p class="text-stone-200 text-xs font-bold uppercase tracking-widest mb-1">

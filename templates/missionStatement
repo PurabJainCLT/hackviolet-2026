@@ -41,11 +41,14 @@
         <div class="text-center mb-8">
             <h1 class="text-4xl text-center font-extrabold tracking-tight italic">Our<span class="text-[#FBEC5D]">Mission</span></h1>
         </div>
-
-        <div class="glass border border-white shadow-2xl rounded-[2.5rem] p-10">
-            
+            <div class="glass relative w-[80vw] max-w-[500px] aspect-square rounded-full border-4 border-black shadow-2xl flex items-center justify-center p-10" style="background-color: #FDFD96;">
+                
+                <p style="text-align: center;"> As a group of students, we want to support the awareness of the gender pay gap. We see our female peers and others fall victim to this pay gap,
+                and we have made it our mission to support the awareness of this pay gap and give educational resources to women who wish to negotiate a higher 
+                salary after learning they were being underpaid through our source. We value the equality that’s achievable through continuous effort.
+                </p>
+            </div>
         </div>
-    </div>
 </body>
     
 </html>
