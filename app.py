@@ -1,8 +1,10 @@
 from flask import Flask, request, redirect, render_template, render_template_string
 import requests
 import pandas as pd
+from routes import main_routes
 
 app = Flask(__name__)
+app.register_blueprint(main_routes)
 
 # ACS 5-year endpoint
 ACS_URL = "https://api.census.gov/data/2023/acs/acs5"
