@@ -83,7 +83,7 @@ def place_paygap(state_fips, geo_code, level):
     </head>
     <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
         <div class="max-w-xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden border border-slate-100">
-            <div class="bg-[#800000] p-8 text-white"> <p class="text-red-200 text-xs font-bold uppercase tracking-widest mb-1">Gender Pay Gap Report</p>
+            <div class="bg-[#FBEC5D] p-8 text-white"> <p class="text-red-200 text-xs font-bold uppercase tracking-widest mb-1">Gender Pay Gap Report</p>
                 <h1 class="text-3xl font-bold italic">{res['NAME']}</h1>
             </div>
             <div class="p-8">
@@ -100,16 +100,16 @@ def place_paygap(state_fips, geo_code, level):
                 <div class="mb-6">
                     <div class="flex justify-between items-end mb-2">
                         <h3 class="font-semibold text-slate-700">Calculated Gap</h3>
-                        <span class="text-2xl font-black text-[#800000]">{pay_gap*100:.1f}%</span>
+                        <span class="text-2xl font-black text-[#FBEC5D]">{pay_gap*100:.1f}%</span>
                     </div>
                     <div class="w-full bg-slate-100 h-4 rounded-full overflow-hidden">
-                        <div class="bg-[#800000] h-full rounded-full animate-bar" style="width: 0%"></div>
+                        <div class="bg-[#FBEC5D] h-full rounded-full animate-bar" style="width: 0%"></div>
                     </div>
                 </div>
                 <p class="text-sm text-slate-500 mb-8 leading-relaxed italic text-center">
                     Women in this region earn <strong>{100-(pay_gap*100):.1f} cents</strong> for every dollar earned by men.
                 </p>
-                <a href="/" class="block w-full text-center py-3 bg-[#800000] text-white rounded-xl font-semibold hover:bg-red-950 transition-all">New Search</a>
+                <a href="/" class="block w-full text-center py-3 bg-[#FBEC5D] text-white rounded-xl font-semibold hover:bg-red-950 transition-all">New Search</a>
             </div>
         </div>
     </body>
