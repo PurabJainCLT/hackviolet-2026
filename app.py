@@ -149,5 +149,9 @@ def place_paygap(state_fips, geo_code, level):
 def ai_chat():
     return render_template("aichat.html")
 
+@app.route("/about")
+def about():
+    return render_template("missionStatement.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
